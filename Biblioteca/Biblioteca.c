@@ -23,6 +23,8 @@ A) todos os cadastros no minimo.
 B) procedimento.
 C) registro.
 */
+
+//comentario
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
