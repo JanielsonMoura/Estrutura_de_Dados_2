@@ -656,10 +656,9 @@ void emprestimoLivro()
         scanf("%d", &selectLivro);
         alunos[selectAluno].livros[i] = livros[selectLivro];
 
-        alunos[selectAluno].livrosEmprestados = i;
-
+       // alunos[selectAluno].livrosEmprestados = i;
+        alunos[selectAluno].livrosEmprestados =alunos[selectAluno].livrosEmprestados+1;
         livros[selectLivro].disponivel = 0;
-
 
         printf("\nDeseja emprestar outro livro? 1 -sim, 0- nao:");
         scanf("%d", &continuarSelecao);
@@ -695,7 +694,7 @@ void devolucaoLivro()
     {
         for (l = 0; l < MAX; l++)
         {
-            if (alunos[a].livros[l].nome_livro == livros[op].nome_livro)
+            if (strcpy(alunos[a].livros[l].nome_livro,livros[op].nome_livro)==0)
             {
                 strcpy(alunos[a].livros[l].nome_livro, " ");
                 alunos[a].livros[l].isbn = 0;
@@ -717,12 +716,15 @@ void relatorio(){
     printf("Livros não disponíveis");
     exibirLivrosNaoDisponiveis();
     */
+   /*relatorio de livros emprestados, o aluno e o curso*/
+   
    printf("Sistema de Relatorio");
 
    for(i=0;i<MAX;i++){
-       for(l=0;l<3;l++){
-           if(alunos[i].livrosEmprestados>0){
-               printf("%d - %s - ");
+       for(l=0;l<MAX;l++){
+          
+          if(alunos[i].livrosEmprestados>=1 && !alunos[i].livros[l].disponivel){
+               printf("%d - %s - %s - %s\n", i, alunos[i].livros[l].nome_livro, alunos[i].nome_aluno, alunos[i].cursos.nome_curso);
            }
        }
    }
