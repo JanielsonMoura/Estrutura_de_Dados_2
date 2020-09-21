@@ -124,8 +124,9 @@ void cadastroCurso();
 //cadastro e exibição de livros
 void cadastrarLivros();
 void gerarLivros();
-void exibirLivrosDisponiveis();
 void exibirLivros();
+void exibirLivrosDisponiveis();
+void exibirLivrosNaoDisponiveis();
 
 // sistema de controller de livros
 void emprestimoLivro();
@@ -710,7 +711,20 @@ void devolucaoLivro()
 
 
 void relatorio(){
-    printf("Sistema de Relatorio");
+    int i,l;
+   /* printf("Sistema de Relatorio");
 
+    printf("Livros não disponíveis");
+    exibirLivrosNaoDisponiveis();
+    */
+   printf("Sistema de Relatorio");
 
+   for(i=0;i<MAX;i++){
+       for(l=0;l<3;l++){
+           if(alunos[i].livrosEmprestados>0){
+               printf("%d - %s - ");
+           }
+       }
+   }
+   
 }
