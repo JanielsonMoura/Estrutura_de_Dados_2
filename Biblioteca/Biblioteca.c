@@ -730,3 +730,7 @@ void relatorio(){
    }
    
 }
+
+void cadastrarFuncionario(){
+    
+}
