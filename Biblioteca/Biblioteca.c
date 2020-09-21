@@ -131,6 +131,8 @@ void exibirLivros();
 void emprestimoLivro();
 void devolucaoLivro();
 
+void relatorio();
+
 Funcionario func[MAX];
 Aluno alunos[MAX];
 Curso cursos[MAX];
@@ -233,7 +235,7 @@ void menuAdm()
                 //4 - Relatorio
             case 4:
                 limparTela();
-                emprestimoLivro();
+                relatorio();
                 break;
             case 5:
                 limparTela();
@@ -605,6 +607,21 @@ void exibirLivrosDisponiveis()
     printf("\n______________________________________________________\n");
 } //fim do procedimento de exibir livros
 
+void exibirLivrosNaoDisponiveis()
+{
+    printf("\n______________________________________________________\n");
+    int i;
+    for (i = 0; i < MAX; i++)
+    {
+        if (!livros[i].disponivel)
+        {
+            printf("\n%d - %s - %s", i, livros[i].nome_livro, livros[i].cursos.area);
+        }
+    } //for de exibição de livros
+    printf("\n______________________________________________________\n");
+} //fim do procedimento de exibir livros
+
+
 void exibirAlunos()
 {
     printf("\n______________________________________________________\n");
@@ -690,3 +707,10 @@ void devolucaoLivro()
     printf("Devolução realizada!");
     limparPausarTela();
 } //fim do procedimento de devolução
+
+
+void relatorio(){
+    printf("Sistema de Relatorio");
+
+
+}
